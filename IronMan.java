@@ -12,9 +12,9 @@ import java.awt.*;
  */
 public class IronMan extends Applet {
 
-
     // -----[ Notes to Remember]-----
     // X - Left to Right, Y - Up and Down
+    // [x, y, width, height]
     // Pixel Art Color Pallete
     Color LightBlue = new Color(105, 135, 175);
     Color DarkBlue = new Color(14, 26, 44);
@@ -40,9 +40,19 @@ public class IronMan extends Applet {
     Color BG = new Color(25, 16, 47);
     Color ColorPaletteBG = new Color(78, 29, 125);
 
+    // For Polygon x & y Arrays
+    int[] xpol1 = {545, 555, 568, 560};
+    int[] ypol1 = {45, 70, 65, 40};
+    int[] xpol2 = {615, 580, 595, 627};
+    int[] ypol2 = {25, 70, 77, 35};
+    int[] xpol3 = {540, 513, 520, 545};
+    int[] ypol3 = {98, 108, 122, 115};
+    int[] xpol4 = {595, 611, 600, 583};
+    int[] ypol4 = {115, 133, 145, 124};
+
     // for main pixelArt Delay
     int ms = 15;
-    
+
     // For Pixel Name Delay
     int oms = 50;
 
@@ -55,13 +65,12 @@ public class IronMan extends Applet {
         }
     }
 
-    // Variable for Image and Audio
-    Image picture;
+    // Variable for Audio
     AudioClip clip;
 
     @Override
     public void init() {
-
+        
         // set the size of frame
         setSize(1020, 480);
 
@@ -69,8 +78,7 @@ public class IronMan extends Applet {
         Frame title = (Frame) this.getParent().getParent();
         title.setTitle("Hulk Buster PixelArt - DCIT-50A / Project / Ryan James Capadocia");
 
-        // For Image and Sound
-        picture = getImage(getDocumentBase(), "Reference.png");
+        // For Sound
         clip = getAudioClip(getDocumentBase(), "BG_Music.wav");
 
         // this will play the audio clip
@@ -80,6 +88,7 @@ public class IronMan extends Applet {
     // Main Pixel Art
     public void PixelArt(Graphics g) {
 
+        //Line 1
         wait(ms);
         g.setColor(DarkBlue);
         wait(ms);
@@ -122,6 +131,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(400, 0, 10, 10);
 
+        // Line 2
         g.setColor(DarkBlue);
         wait(ms);
         g.fillRect(0, 10, 20, 10);
@@ -163,6 +173,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(450, 10, 10, 10);
 
+        //Line 3
         g.setColor(DarkBlue);
         wait(ms);
         g.fillRect(0, 20, 20, 10);
@@ -209,6 +220,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(270, 20, 20, 10);
 
+        // Line 4
         wait(ms);
         g.setColor(DarkBlue);
         g.fillRect(0, 30, 70, 10);
@@ -262,6 +274,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(220, 30, 10, 10);
 
+        // Line 4
         g.setColor(Black);
         wait(ms);
         g.fillRect(0, 40, 10, 10);
@@ -323,6 +336,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(290, 40, 10, 10);
 
+        //Line 5
         g.setColor(DarkBlue);
         wait(ms);
         g.fillRect(0, 50, 30, 10);
@@ -363,6 +377,7 @@ public class IronMan extends Applet {
         g.setColor(DarkRed);
         g.fillRect(320, 50, 10, 10);
 
+        // Line 6
         g.setColor(DarkBlue);
         wait(ms);
         g.fillRect(0, 60, 10, 10);
@@ -423,6 +438,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(220, 60, 40, 10);
 
+        // Line 7
         g.setColor(DarkBlue);
         wait(ms);
         g.fillRect(0, 70, 20, 10);
@@ -479,6 +495,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(330, 70, 20, 10);
 
+        // Line 8
         g.setColor(DarkBlue);
         wait(ms);
         g.fillRect(0, 80, 40, 10);
@@ -545,6 +562,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(350, 80, 10, 10);
 
+        // Line 9
         g.setColor(Black);
         wait(ms);
         g.fillRect(0, 90, 10, 10);
@@ -614,6 +632,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(360, 90, 10, 10);
 
+        //Line 10
         g.setColor(Black);
         wait(ms);
         g.fillRect(0, 100, 20, 10);
@@ -689,6 +708,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(370, 100, 10, 10);
 
+        // Line 11
         g.setColor(Black);
         wait(ms);
         g.fillRect(0, 110, 30, 10);
@@ -755,6 +775,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(460, 110, 10, 10);
 
+        //Line 12
         g.setColor(Red);
         wait(ms);
         g.fillRect(0, 120, 10, 10);
@@ -820,6 +841,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(410, 120, 10, 10);
 
+        // Line 13
         g.setColor(DarkRed);
         wait(ms);
         g.fillRect(0, 130, 20, 10);
@@ -875,7 +897,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(380, 130, 10, 10);
 
-        // <editor-fold defaultstate="collapsed" desc=" line 15 ">
+        // Line 14
         g.setColor(Brown);
         wait(ms);
         g.fillRect(0, 140, 20, 10);
@@ -932,6 +954,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(410, 140, 10, 10);
 
+        //Line 15
         g.setColor(DarkerBrown);
         wait(ms);
         g.fillRect(0, 150, 10, 10);
@@ -993,6 +1016,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(460, 150, 20, 10);
 
+        //Line 16
         g.setColor(Black);
         wait(ms);
         g.fillRect(0, 160, 20, 10);
@@ -1062,6 +1086,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(440, 160, 40, 10);
 
+        //Line 17
         g.setColor(Black);
         wait(ms);
         g.fillRect(0, 170, 10, 10);
@@ -1130,6 +1155,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(430, 170, 40, 10);
 
+        // Line 18
         g.setColor(Black);
         wait(ms);
         g.fillRect(0, 180, 10, 10);
@@ -1198,6 +1224,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(440, 180, 20, 10);
 
+        // Line 19
         g.setColor(DarkRed);
         wait(ms);
         g.fillRect(0, 190, 20, 10);
@@ -1262,6 +1289,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(450, 190, 30, 10);
 
+        //Line 20
         g.setColor(DarkRed);
         wait(ms);
         g.fillRect(0, 200, 20, 10);
@@ -1325,6 +1353,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(440, 200, 30, 10);
 
+        // Line 21
         g.setColor(Red);
         wait(ms);
         g.fillRect(0, 210, 10, 50);
@@ -1399,6 +1428,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(420, 210, 20, 10);
 
+        // Line 22
         g.setColor(Red);
         wait(ms);
         g.fillRect(10, 220, 10, 10);
@@ -1475,6 +1505,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(420, 220, 10, 10);
 
+        // Line 23
         g.setColor(Orange);
         wait(ms);
         g.fillRect(10, 230, 10, 10);
@@ -1547,6 +1578,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(460, 230, 20, 10);
 
+        //Line 24
         g.setColor(Red);
         wait(ms);
         g.fillRect(10, 240, 10, 10);
@@ -1593,6 +1625,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(430, 240, 10, 40);
 
+        //Line 25
         g.setColor(Red);
         wait(ms);
         g.fillRect(10, 250, 30, 10);
@@ -1634,6 +1667,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(310, 250, 10, 20);
 
+        //Line 26
         g.setColor(DarkRed);
         wait(ms);
         g.fillRect(0, 260, 60, 10);
@@ -1664,6 +1698,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(420, 260, 10, 10);
 
+        //Line 27
         g.setColor(Brown);
         wait(ms);
         g.fillRect(0, 270, 40, 10);
@@ -1710,6 +1745,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(460, 270, 20, 10);
 
+        //Line 28
         g.setColor(Brown);
         wait(ms);
         g.fillRect(0, 280, 20, 10);
@@ -1763,6 +1799,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(380, 280, 10, 10);
 
+        // Line 29
         g.setColor(DirtyWhite);
         wait(ms);
         g.fillRect(0, 290, 10, 10);
@@ -1820,6 +1857,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(360, 290, 10, 10);
 
+        // Line 30
         g.setColor(Brown);
         wait(ms);
         g.fillRect(0, 300, 10, 10);
@@ -1874,6 +1912,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(430, 300, 20, 10);
 
+        // Line 31
         g.setColor(DirtyWhite);
         wait(ms);
         g.fillRect(0, 310, 10, 10);
@@ -1938,6 +1977,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(380, 310, 10, 10);
 
+        // Line 32
         g.setColor(Black);
         wait(ms);
         g.fillRect(0, 320, 10, 10);
@@ -1990,6 +2030,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(470, 320, 10, 10);
 
+        // Line 33
         g.setColor(DarkRed);
         wait(ms);
         g.fillRect(0, 330, 10, 10);
@@ -2044,6 +2085,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(450, 330, 30, 10);
 
+        // Line 34
         g.setColor(Red);
         wait(ms);
         g.fillRect(0, 340, 10, 10);
@@ -2104,6 +2146,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(370, 340, 80, 10);
 
+        // Line 35
         g.setColor(Red);
         wait(ms);
         g.fillRect(0, 350, 10, 10);
@@ -2159,6 +2202,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(370, 350, 10, 10);
 
+        // Line 36
         g.setColor(Red);
         wait(ms);
         g.fillRect(0, 360, 20, 10);
@@ -2206,6 +2250,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(380, 360, 10, 10);
 
+        // Line 37
         g.setColor(Red);
         wait(ms);
         g.fillRect(0, 370, 30, 10);
@@ -2252,6 +2297,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(290, 370, 170, 10);
 
+        // Line 38
         g.setColor(Red);
         wait(ms);
         g.fillRect(0, 380, 30, 10);
@@ -2293,6 +2339,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(260, 380, 30, 10);
 
+        // Line 39
         g.setColor(Red);
         wait(ms);
         g.fillRect(0, 390, 30, 10);
@@ -2323,6 +2370,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(290, 390, 190, 10);
 
+        // Line 40
         g.setColor(Red);
         wait(ms);
         g.fillRect(0, 400, 30, 10);
@@ -2360,6 +2408,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(460, 400, 20, 10);
 
+        // Line 41
         g.setColor(Red);
         wait(ms);
         g.fillRect(0, 410, 40, 20);
@@ -2402,6 +2451,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(470, 410, 10, 10);
 
+        // Line 42
         g.setColor(Red);
         wait(ms);
         g.fillRect(120, 420, 70, 10);
@@ -2442,6 +2492,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(400, 420, 10, 10);
 
+        // Line 43
         g.setColor(DarkRed);
         wait(ms);
         g.fillRect(0, 430, 10, 10);
@@ -2490,6 +2541,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(390, 430, 10, 10);
 
+        // Line 44
         g.setColor(DarkRed);
         wait(ms);
         g.fillRect(0, 440, 10, 10);
@@ -2531,6 +2583,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(460, 440, 10, 10);
 
+        // Line 45
         g.setColor(DarkRed);
         wait(ms);
         g.fillRect(0, 450, 20, 30);
@@ -2575,6 +2628,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(320, 450, 10, 10);
 
+        // Line 46
         g.setColor(DarkRed);
         wait(ms);
         g.fillRect(20, 460, 10, 10);
@@ -2619,6 +2673,7 @@ public class IronMan extends Applet {
         wait(ms);
         g.fillRect(380, 460, 10, 10);
 
+        // Line 47
         g.setColor(DarkRed);
         wait(ms);
         g.fillRect(20, 470, 20, 10);
@@ -2661,29 +2716,23 @@ public class IronMan extends Applet {
 
     }
 
-    @Override
-    public void paint(Graphics g) {
-
-        g.setColor(BG);
-        g.fillRect(480, 0, 550, 480);
-        g.fillRect(480, 0, 170, 170);
-        g.drawImage(picture, 480, 0, 170, 170, this);
-
-        // Call the PixelArt After displaying Imageg
-        PixelArt(g);
-
+    public void TextArt(Graphics g) {
         // Display the SubText
         g.setColor(TextR);
-        g.fillRect(700, 30, 10, 30);    // H
+        // H
+        g.fillRect(700, 30, 10, 30);
         g.fillRect(710, 45, 10, 5);
         g.fillRect(720, 30, 10, 30);
-        g.fillRect(735, 30, 10, 20);    // U
+        // U
+        g.fillRect(735, 30, 10, 20);
         g.fillRect(735, 50, 30, 5);
         g.fillRect(755, 30, 10, 20);
         g.fillRect(740, 50, 20, 10);
-        g.fillRect(770, 30, 10, 30);    // L
+        // L
+        g.fillRect(770, 30, 10, 30);
         g.fillRect(775, 55, 20, 5);
-        g.fillRect(800, 30, 10, 30);    // K
+        // K
+        g.fillRect(800, 30, 10, 30);
         g.fillRect(810, 40, 10, 10);
         g.fillRect(820, 35, 10, 5);
         g.fillRect(825, 30, 5, 5);
@@ -2692,29 +2741,35 @@ public class IronMan extends Applet {
         g.fillRect(825, 50, 5, 10);
         g.fillRect(820, 50, 5, 5);
 
-        g.fillRect(735, 65, 10, 30);    // B
+        // B
+        g.fillRect(735, 65, 10, 30);
         g.fillRect(745, 65, 15, 5);
         g.fillRect(745, 75, 15, 5);
         g.fillRect(745, 90, 15, 5);
         g.fillRect(755, 70, 10, 5);
         g.fillRect(755, 80, 10, 10);
-        g.fillRect(770, 65, 10, 20);    // U
+        // U
+        g.fillRect(770, 65, 10, 20);
         g.fillRect(770, 85, 30, 5);
         g.fillRect(790, 65, 10, 20);
         g.fillRect(775, 90, 20, 5);
-        g.fillRect(810, 65, 25, 5);     // S
+        // S
+        g.fillRect(810, 65, 25, 5);
         g.fillRect(805, 70, 10, 5);
         g.fillRect(815, 75, 10, 5);
         g.fillRect(825, 75, 5, 20);
         g.fillRect(830, 80, 5, 10);
         g.fillRect(805, 90, 25, 5);
-        g.fillRect(840, 65, 30, 5);     // T
+        // T
+        g.fillRect(840, 65, 30, 5);
         g.fillRect(850, 70, 10, 25);
-        g.fillRect(875, 65, 30, 5);     // E
+        // E
+        g.fillRect(875, 65, 30, 5);
         g.fillRect(875, 70, 10, 20);
         g.fillRect(885, 80, 10, 5);
         g.fillRect(875, 90, 30, 5);
-        g.fillRect(910, 65, 25, 5);     // R
+        // R
+        g.fillRect(910, 65, 25, 5);
         g.fillRect(910, 80, 25, 5);
         g.fillRect(910, 70, 10, 10);
         g.fillRect(910, 85, 10, 10);
@@ -2755,8 +2810,9 @@ public class IronMan extends Applet {
         g.fillRoundRect(925, 145, 20, 20, 6, 6);
 
         // Display the Pixel Name
-        g.setColor(TextR);                  // R
+        g.setColor(TextR);
         wait(oms);
+        // R
         g.fillRect(640, 180, 20, 60);
         g.fillRect(660, 180, 25, 5);
         g.fillRect(660, 190, 20, 5);
@@ -2784,8 +2840,9 @@ public class IronMan extends Applet {
         g.fillRect(655, 220, 25, 5);
         g.fillRect(665, 225, 20, 5);
         g.fillRect(670, 230, 20, 5);
-        g.setColor(TextR);                  // Y
+        g.setColor(TextR);
         wait(oms);
+        // Y
         g.fillRect(700, 180, 20, 25);
         g.fillRect(720, 200, 5, 5);
         g.fillRect(725, 205, 10, 5);
@@ -2808,8 +2865,9 @@ public class IronMan extends Applet {
         g.fillRect(715, 210, 30, 5);
         g.fillRect(720, 215, 20, 5);
         g.fillRect(725, 220, 10, 15);
-        g.setColor(TextR);                  // A
+        g.setColor(TextR);
         wait(oms);
+        // A
         g.fillRect(775, 180, 30, 5);
         g.fillRect(770, 185, 40, 5);
         g.fillRect(765, 190, 50, 5);
@@ -2828,8 +2886,9 @@ public class IronMan extends Applet {
         g.fillRect(770, 210, 10, 25);
         g.fillRect(805, 210, 5, 25);
         g.fillRect(780, 215, 25, 10);
-        g.setColor(TextR);                  // N
+        g.setColor(TextR);
         wait(oms);
+        // N
         g.fillRect(820, 180, 20, 60);
         g.fillRect(855, 180, 20, 60);
         g.fillRect(840, 195, 5, 5);
@@ -2852,8 +2911,9 @@ public class IronMan extends Applet {
         g.fillRect(850, 220, 10, 5);
         g.fillRect(855, 225, 5, 5);
 
-        g.setColor(TextR);                  // J
+        g.setColor(TextR);
         wait(oms);
+        // J
         g.fillRect(595, 280, 20, 20);
         g.fillRect(600, 300, 35, 5);
         g.fillRect(615, 290, 10, 5);
@@ -2867,8 +2927,9 @@ public class IronMan extends Applet {
         g.fillRect(600, 295, 35, 5);
         g.fillRect(625, 290, 15, 5);
         g.fillRect(630, 275, 10, 15);
-        g.setColor(TextR);                  // A
+        g.setColor(TextR);
         wait(oms);
+        // A
         g.fillRect(660, 245, 30, 5);
         g.fillRect(655, 250, 40, 5);
         g.fillRect(650, 255, 50, 5);
@@ -2887,8 +2948,9 @@ public class IronMan extends Applet {
         g.fillRect(690, 275, 5, 25);
         g.fillRect(660, 280, 35, 5);
         g.fillRect(660, 285, 35, 5);
-        g.setColor(TextR);                  // M
+        g.setColor(TextR);
         wait(oms);
+        // M
         g.fillRect(705, 245, 20, 60);
         g.fillRect(760, 245, 20, 60);
         g.fillRect(725, 255, 5, 40);
@@ -2917,8 +2979,9 @@ public class IronMan extends Applet {
         g.fillRect(745, 280, 5, 20);
         g.fillRect(750, 275, 5, 20);
         g.fillRect(755, 275, 5, 10);
-        g.setColor(TextR);                  // E
+        g.setColor(TextR);
         wait(oms);
+        // E
         g.fillRect(785, 245, 20, 60);
         g.fillRect(805, 245, 30, 15);
         g.fillRect(805, 265, 15, 15);
@@ -2931,8 +2994,9 @@ public class IronMan extends Applet {
         g.setColor(TextO);
         g.fillRect(790, 275, 10, 25);
         g.fillRect(800, 295, 30, 5);
-        g.setColor(TextR);                  // S
+        g.setColor(TextR);
         wait(oms);
+        // S
         g.fillRect(850, 245, 40, 5);
         g.fillRect(845, 250, 50, 5);
         g.fillRect(840, 255, 55, 5);
@@ -2962,8 +3026,9 @@ public class IronMan extends Applet {
         g.fillRect(875, 290, 15, 5);
         g.fillRect(845, 295, 40, 5);
 
-        g.setColor(TextR);                  // C
+        g.setColor(TextR);
         wait(oms);
+        // C
         g.fillRect(530, 310, 30, 5);
         g.fillRect(525, 315, 40, 5);
         g.fillRect(520, 320, 50, 5);
@@ -2989,8 +3054,9 @@ public class IronMan extends Applet {
         g.fillRect(555, 350, 10, 5);
         g.fillRect(525, 355, 40, 5);
         g.fillRect(530, 360, 30, 5);
-        g.setColor(TextR);                  // A
+        g.setColor(TextR);
         wait(oms);
+        // A
         g.fillRect(585, 310, 30, 5);
         g.fillRect(580, 315, 40, 5);
         g.fillRect(575, 320, 50, 5);
@@ -3011,8 +3077,9 @@ public class IronMan extends Applet {
         g.fillRect(580, 345, 40, 10);
         g.fillRect(580, 355, 10, 10);
         g.fillRect(615, 355, 5, 10);
-        g.setColor(TextR);                  // P
+        g.setColor(TextR);
         wait(oms);
+        // P
         g.fillRect(630, 310, 20, 60);
         g.fillRect(650, 310, 20, 5);
         g.fillRect(650, 315, 25, 5);
@@ -3030,8 +3097,9 @@ public class IronMan extends Applet {
         g.fillRect(635, 340, 10, 25);
         g.fillRect(665, 340, 10, 5);
         g.fillRect(645, 345, 25, 5);
-        g.setColor(TextR);                  // A
+        g.setColor(TextR);
         wait(oms);
+        // A
         g.fillRect(695, 310, 30, 5);
         g.fillRect(690, 315, 40, 5);
         g.fillRect(685, 320, 50, 5);
@@ -3052,8 +3120,9 @@ public class IronMan extends Applet {
         g.fillRect(690, 345, 40, 10);
         g.fillRect(690, 355, 10, 10);
         g.fillRect(725, 355, 5, 10);
-        g.setColor(TextR);                  // D
+        g.setColor(TextR);
         wait(oms);
+        // D
         g.fillRect(740, 310, 20, 60);
         g.fillRect(760, 310, 20, 5);
         g.fillRect(760, 315, 25, 5);
@@ -3073,8 +3142,9 @@ public class IronMan extends Applet {
         g.fillRect(775, 350, 10, 5);
         g.fillRect(755, 355, 30, 5);
         g.fillRect(755, 360, 25, 5);
-        g.setColor(TextR);                  // O
+        g.setColor(TextR);
         wait(oms);
+        // O
         g.fillRect(805, 310, 30, 5);
         g.fillRect(800, 315, 40, 5);
         g.fillRect(795, 320, 50, 5);
@@ -3096,8 +3166,9 @@ public class IronMan extends Applet {
         g.fillRect(830, 350, 10, 5);
         g.fillRect(800, 355, 40, 5);
         g.fillRect(805, 360, 30, 5);
-        g.setColor(TextR);                  // C
+        g.setColor(TextR);
         wait(oms);
+        // C
         g.fillRect(860, 310, 30, 5);
         g.fillRect(855, 315, 40, 5);
         g.fillRect(850, 320, 50, 5);
@@ -3118,15 +3189,17 @@ public class IronMan extends Applet {
         g.fillRect(885, 350, 10, 5);
         g.fillRect(855, 355, 40, 5);
         g.fillRect(860, 360, 30, 5);
-        g.setColor(TextR);                  // I
+        g.setColor(TextR);
         wait(oms);
+        // I
         g.fillRect(905, 310, 20, 60);
         g.setColor(TextY);
         g.fillRect(910, 315, 10, 25);
         g.setColor(TextO);
         g.fillRect(910, 340, 10, 25);
-        g.setColor(TextR);                  // A
+        g.setColor(TextR);
         wait(oms);
+        // A
         g.fillRect(940, 310, 30, 5);
         g.fillRect(935, 315, 40, 5);
         g.fillRect(930, 320, 50, 5);
@@ -3148,12 +3221,14 @@ public class IronMan extends Applet {
 
         // Display the Subject
         g.setColor(TextR);
-        g.fillRect(600, 410, 10, 30);       // D
+        // D
+        g.fillRect(600, 410, 10, 30);
         g.fillRect(610, 410, 10, 5);
         g.fillRect(610, 435, 10, 5);
         g.fillRect(620, 410, 5, 30);
         g.fillRect(625, 415, 5, 20);
-        g.fillRect(640, 415, 5, 20);        // C
+        // C
+        g.fillRect(640, 415, 5, 20);
         g.fillRect(645, 410, 5, 30);
         g.fillRect(650, 410, 10, 5);
         g.fillRect(650, 435, 10, 5);
@@ -3161,19 +3236,24 @@ public class IronMan extends Applet {
         g.fillRect(660, 430, 5, 10);
         g.fillRect(665, 415, 5, 5);
         g.fillRect(665, 430, 5, 5);
-        g.fillRect(680, 410, 30, 5);        // I
+        // I
+        g.fillRect(680, 410, 30, 5);
         g.fillRect(690, 410, 10, 30);
         g.fillRect(680, 435, 30, 5);
-        g.fillRect(720, 410, 30, 5);        // T
+        // T
+        g.fillRect(720, 410, 30, 5);
         g.fillRect(730, 410, 10, 30);
-        g.fillRect(755, 425, 15, 5);        // -
-        g.fillRect(780, 410, 30, 5);        // 5
+        // -
+        g.fillRect(755, 425, 15, 5);
+        // 5
+        g.fillRect(780, 410, 30, 5);
         g.fillRect(780, 415, 10, 10);
         g.fillRect(790, 420, 15, 5);
         g.fillRect(800, 425, 10, 10);
         g.fillRect(785, 435, 20, 5);
         g.fillRect(780, 430, 10, 5);
-        g.fillRect(825, 410, 20, 5);        // 0
+        // 0
+        g.fillRect(825, 410, 20, 5);
         g.fillRect(820, 415, 10, 5);
         g.fillRect(840, 415, 10, 5);
         g.fillRect(820, 420, 30, 5);
@@ -3182,12 +3262,54 @@ public class IronMan extends Applet {
         g.fillRect(820, 430, 10, 5);
         g.fillRect(840, 430, 10, 5);
         g.fillRect(825, 435, 20, 5);
-        g.fillRect(865, 410, 20, 5);        // A
+        // A
+        g.fillRect(865, 410, 20, 5);
         g.fillRect(860, 415, 10, 10);
         g.fillRect(880, 415, 10, 10);
         g.fillRect(860, 425, 30, 5);
         g.fillRect(860, 430, 10, 10);
         g.fillRect(880, 430, 10, 10);
+    }
+
+    public void myLogo(Graphics g) {
+        g.setColor(Color.WHITE);
+        // big Oval
+        g.fillOval(536, 63, 68, 68);
+        // Small Ovals
+        // Upper Left Oval
+        g.fillOval(530, 9, 38, 38);
+        // Upper Right Oval
+        g.fillOval(611, 1, 38, 38);
+        // Lower Left Oval
+        g.fillOval(482, 102, 38, 38);
+        // Lower Right Oval
+        g.fillOval(596, 130, 38, 38);
+
+        // Upper Left Polygon
+        g.fillPolygon(xpol1, ypol1, xpol1.length);
+        // Uppser Right Polygon
+        g.fillPolygon(xpol2, ypol2, xpol2.length);
+        // Lower Left Polygon
+        g.fillPolygon(xpol3, ypol3, xpol3.length);
+        // Lower Right Polygon
+        g.fillPolygon(xpol4, ypol4, xpol4.length);
+    }
+
+    @Override
+    public void paint(Graphics g) {
+
+        // For Background
+        g.setColor(BG);
+        g.fillRect(480, 0, 550, 480);
+        
+        
+        // Call the PixelArt, TextArt, and Logo methods
+        PixelArt(g);
+        TextArt(g);
+        
+        g.setColor(Black);
+        g.fillRoundRect(480, 0, 170, 170, 10, 10);
+        myLogo(g);
 
     }
 }
